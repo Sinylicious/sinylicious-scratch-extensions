@@ -65,13 +65,15 @@
 
         .project-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+            /* 1. Use auto-fit so empty column tracks collapse out of the way */
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
             gap: 30px; 
             max-width: 1200px;
             margin: 40px auto 0 auto;
+            /* 2. Centers whatever visible columns remain */
             justify-content: center; 
         }
-
+        
         .card { 
             background: #18181c; 
             border: 2px solid #27272a;
@@ -81,6 +83,10 @@
             flex-direction: column;
             box-sizing: border-box;
             transition: transform 0.2s ease, border-color 0.2s ease;
+            
+            /* 3. CRITICAL: Prevents the card from stretching infinitely when single */
+            width: 100%;
+            max-width: 380px; 
         }
 
         .card:hover {
