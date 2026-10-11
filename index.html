@@ -113,9 +113,11 @@
             width: 100%;
             aspect-ratio: 480 / 360;
             border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 16px;
+            overflow: hidden; /* This crops the dark overlay cleanly to your image corners */
+            margin-bottom: 18px;
+            background: rgba(0, 0, 0, 0.025);
         }
+
 
         /* Scaled-up SVG Thumbnail with smooth blur transition */
         .thumbnail {
@@ -125,7 +127,6 @@
             transition: filter 0.3s ease, transform 0.3s ease;
         }
 
-        /* Glass overlay container that activates on hover */
         .hover-overlay {
             position: absolute;
             top: 0;
@@ -136,18 +137,15 @@
             align-items: center;
             justify-content: center;
             opacity: 0;
-            background: rgba(255, 255, 255, 0.3);
-            backdrop-filter: blur(4px);
-            -webkit-backdrop-filter: blur(4px);
-            transition: opacity 0.3s ease;
+            background: rgba(0, 0, 0, 0.05); /* Smooth dark tint wash */
+            transition: opacity 0.25s ease;
             pointer-events: none; 
             padding: 0 24px;
             box-sizing: border-box;
         }
 
-
         .card:hover .thumbnail {
-            filter: none;
+            filter: none !important;
             transform: scale(1.01);
         }
 
