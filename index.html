@@ -65,12 +65,12 @@
 
         .project-grid { 
             display: grid; 
-            /* 1. Use auto-fit so empty column tracks collapse out of the way */
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            /* Uses auto-fit and a fixed maximum card width structure */
+            grid-template-columns: repeat(auto-fit, minmax(320px, 380px)); 
             gap: 30px; 
             max-width: 1200px;
             margin: 40px auto 0 auto;
-            /* 2. Centers whatever visible columns remain */
+            /* This centers the cards flawlessly when empty tracks collapse */
             justify-content: center; 
         }
         
@@ -83,11 +83,14 @@
             flex-direction: column;
             box-sizing: border-box;
             transition: transform 0.2s ease, border-color 0.2s ease;
-            
-            /* 3. CRITICAL: Prevents the card from stretching infinitely when single */
             width: 100%;
-            max-width: 380px; 
         }
+        
+        /* NEW: The browser handles hiding items instead of forcing inline-flex onto them */
+        .card[data-hidden="true"] {
+            display: none !important;
+        }
+
 
         .card:hover {
             transform: translateY(-4px);
@@ -209,31 +212,31 @@
         </div>
     </div>
 
-    <div class="project-grid">
-         <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const searchBar = document.querySelector('.search-bar');
-            const cards = document.querySelectorAll('.card');
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchBar = document.querySelector('.search-bar');
+        const cards = document.querySelectorAll('.card');
 
-            searchBar.addEventListener('input', (e) => {
-                const searchTerm = e.target.value.toLowerCase().trim();
+        searchBar.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
 
-                cards.forEach(card => {
-                    // Pulls text from the image alt attribute and the card description
-                    const imgAlt = card.querySelector('.thumbnail')?.getAttribute('alt') || '';
-                    const description = card.querySelector('.description')?.textContent || '';
-                    const combinedText = `${imgAlt} ${description}`.toLowerCase();
+            cards.forEach(card => {
+                const imgAlt = card.querySelector('.thumbnail')?.getAttribute('alt') || '';
+                const description = card.querySelector('.description')?.textContent || '';
+                const combinedText = `${imgAlt} ${description}`.toLowerCase();
 
-                    // Shows the card if the search term matches, hides it if it doesn't
-                    if (combinedText.includes(searchTerm)) {
-                        card.style.display = 'flex'; 
-                    } else {
-                        card.style.display = 'none'; 
-                    }
-                });
+                if (combinedText.includes(searchTerm)) {
+                    // Item matches: clear the hidden flag
+                    card.removeAttribute('data-hidden');
+                } else {
+                    // Item doesn't match: trigger CSS display: none safely
+                    card.setAttribute('data-hidden', 'true');
+                }
             });
         });
-    </script>
+    });
+</script>
+
 
 </body>
 </html>
