@@ -76,31 +76,36 @@
             margin: 0 auto;
         }
 
-        /* Base Project Card Styling */
+        /* Aqua-Style Classic Metallic Light Silver Window Containers */
         .card { 
-            background: #18181c; 
-            border: 2px solid #27272a;
-            padding: 16px; 
-            border-radius: 16px; 
+            background-color: #ececec;
+            background-image: repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(255,255,255,0.4) 1px, rgba(255,255,255,0.4) 2px); /* Very subtle white inner pinstripes */
+            padding: 18px; 
+            border-radius: 14px; 
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
             box-sizing: border-box;
-            transition: transform 0.2s ease, border-color 0.2s ease;
+            border: 1px solid #b3b3b3;
+            /* Massive, soft Mac OS X floating drop-shadow engine */
+            box-shadow: 
+                0 15px 30px rgba(0, 0, 0, 0.4),
+                0 4px 10px rgba(0, 0, 0, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
+
+.card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 
+        0 25px 45px rgba(0, 0, 0, 0.5),
+        0 8px 15px rgba(0, 0, 0, 0.25);
+}
+
 
         .card:hover {
             transform: translateY(-4px);
         }
 
-        /* Unique Custom Colors for Card Borders to Match Your SVGs */
-        .card-motion { border-color: #2563eb; }
-        .card-looks { border-color: #7c3aed; }
-        .card-sound { border-color: #db2777; }
-        .card-events { border-color: #ea580c; }
-        .card-control { border-color: #eab308; }
-        .card-sensing { border-color: #0d9488; }
 
         /* NEW: Image Container to isolate the blur overlay layout */
         .thumbnail-container {
@@ -187,23 +192,25 @@
         }
         .btn-docs:hover { background: #3f3f46; }
 
-        /* Horizontal Separator Bar */
+        /* Sleek realistic window separation bar line */
         .separator {
             width: 100%;
             height: 1px;
-            background-color: #27272a;
+            background: linear-gradient(90deg, transparent, rgba(0,0,0,0.1) 20%, rgba(0,0,0,0.1) 80%, transparent);
             border: none;
-            margin: 4px 0 16px 0;
+            margin: 6px 0 16px 0;
         }
-
-        /* Description placed at the very bottom */
+        
+        /* Dark charcoal text for perfect readability inside silver windows */
         .description {
-            font-size: 0.95rem;
+            font-size: 0.92rem;
             font-weight: 400;
-            color: #a1a1aa;
+            color: #333333; /* Dark slate text color */
             margin: 0;
             line-height: 1.5;
+            text-align: center;
         }
+
     </style>
 </head>
 <body>
