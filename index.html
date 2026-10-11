@@ -22,7 +22,7 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* 1. Center the Heading */
+        /* Center the Heading */
         .header-container {
             text-align: center;
             margin-bottom: 40px;
@@ -38,7 +38,7 @@
             color: #aaa;
         }
 
-        /* 2. Three-Column Grid Setup */
+        /* Three-Column Grid Setup */
         .project-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
@@ -59,19 +59,14 @@
             text-align: center;
         }
 
-        .card h3 {
-            font-weight: 500; /* Medium weight */
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-
-        /* 3. SVG Thumbnail Styling */
+        /* SVG Thumbnail Styling */
         .thumbnail {
             width: 100%;
             height: auto;
             max-height: 200px;
             object-fit: contain;
             border-radius: 6px;
+            margin-top: 10px; /* Replaces title spacing */
             margin-bottom: 15px;
         }
 
@@ -83,7 +78,7 @@
             margin-bottom: 15px;
         }
 
-        /* 4. Two Actions Buttons Layout */
+        /* Two Actions Buttons Layout */
         .btn { 
             flex: 1;
             padding: 10px 5px; 
@@ -111,7 +106,7 @@
             color: #ddd; 
         }
 
-        /* 5. Description placed at the very bottom */
+        /* Description placed at the very bottom */
         .description {
             font-size: 0.95rem;
             font-weight: 400;
@@ -132,10 +127,10 @@
     <!-- 3-Column Grid Grid -->
     <div class="project-grid">
 
-        <!-- ROW 1: CARD 1 -->
+        <!-- CARD 1: MOTION++ -->
         <div class="card">
-            <h3>Project title</h3>
-            <img class="thumbnail" src="thumbnail-1.svg" alt="Project Thumbnail">
+            <!-- Looks inside a folder named thumbnails for motion-plus-plus.svg -->
+            <img class="thumbnail" src="thumbnails/motion-plus-plus.svg" alt="motion++">
             <div class="button-group">
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
                 <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
@@ -143,10 +138,9 @@
             <p class="description">Description text goes here at the bottom of the card container.</p>
         </div>
 
-        <!-- ROW 1: CARD 2 -->
+        <!-- CARD 2: LOOKS++ -->
         <div class="card">
-            <h3>Project title</h3>
-            <img class="thumbnail" src="thumbnail-2.svg" alt="Project Thumbnail">
+            <img class="thumbnail" src="thumbnails/looks-plus-plus.svg" alt="looks++">
             <div class="button-group">
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
                 <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
@@ -154,10 +148,9 @@
             <p class="description">Description text goes here at the bottom of the card container.</p>
         </div>
 
-        <!-- ROW 1: CARD 3 -->
+        <!-- CARD 3: SOUND++ -->
         <div class="card">
-            <h3>Project title</h3>
-            <img class="thumbnail" src="thumbnail-3.svg" alt="Project Thumbnail">
+            <img class="thumbnail" src="thumbnails/sound-plus-plus.svg" alt="sound++">
             <div class="button-group">
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
                 <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
@@ -165,10 +158,9 @@
             <p class="description">Description text goes here at the bottom of the card container.</p>
         </div>
 
-        <!-- ROW 2: CARD 4 -->
+        <!-- CARD 4: EVENTS++ -->
         <div class="card">
-            <h3>Project title</h3>
-            <img class="thumbnail" src="thumbnail-4.svg" alt="Project Thumbnail">
+            <img class="thumbnail" src="thumbnails/events-plus-plus.svg" alt="events++">
             <div class="button-group">
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
                 <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
@@ -176,10 +168,9 @@
             <p class="description">Description text goes here at the bottom of the card container.</p>
         </div>
 
-        <!-- ROW 2: CARD 5 -->
+        <!-- CARD 5: CONTROL++ -->
         <div class="card">
-            <h3>Project title</h3>
-            <img class="thumbnail" src="thumbnail-5.svg" alt="Project Thumbnail">
+            <img class="thumbnail" src="thumbnails/control-plus-plus.svg" alt="control++">
             <div class="button-group">
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
                 <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
@@ -187,10 +178,9 @@
             <p class="description">Description text goes here at the bottom of the card container.</p>
         </div>
 
-        <!-- ROW 2: CARD 6 -->
+        <!-- CARD 6: SENSING++ -->
         <div class="card">
-            <h3>Project title</h3>
-            <img class="thumbnail" src="thumbnail-6.svg" alt="Project Thumbnail">
+            <img class="thumbnail" src="thumbnails/sensing-plus-plus.svg" alt="sensing++">
             <div class="button-group">
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
                 <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
@@ -199,6 +189,10 @@
         </div>
 
     </div>
+
+</body>
+</html>
+
 
 </body>
 </html>
