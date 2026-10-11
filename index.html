@@ -5,6 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scratch Custom Blocks Hub</title>
     <style>
+    /* Vintage Mac OS X Desktop Top Menu Bar */
+        .mac-menubar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 22px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0.95) 0%, rgba(226,226,226,0.9) 100%);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            padding: 0 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #333;
+            z-index: 9999;
+            box-sizing: border-box;
+        }
+        
+        .menu-item {
+            margin-right: 18px;
+            cursor: default;
+        }
+
+        /* Custom Profile Picture Anchor for the Menu Bar */
+        .menu-avatar {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 20px;
+            object-fit: cover;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+            border: 1px solid rgba(0,0,0,0.15);
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        
+        /* Add padding to body so the menu bar doesn't cover your heading text */
+        body {
+            padding-top: 65px !important;
+        }
+
         /* Secure Dual-Path Font Import */
         @import url('https://googleapis.com');
 
@@ -94,12 +137,12 @@
             transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
-.card:hover {
-    transform: translateY(-5px) scale(1.01);
-    box-shadow: 
-        0 25px 45px rgba(0, 0, 0, 0.5),
-        0 8px 15px rgba(0, 0, 0, 0.25);
-}
+        .card:hover {
+            transform: translateY(-5px) scale(1.01);
+            box-shadow: 
+            0 25px 45px rgba(0, 0, 0, 0.5),
+            0 8px 15px rgba(0, 0, 0, 0.25);
+        }
 
 
         .card:hover {
@@ -137,7 +180,7 @@
             align-items: center;
             justify-content: center;
             opacity: 0;
-            background: rgba(0, 0, 0, 0.05); /* Smooth dark tint wash */
+            background: rgba(0, 0, 0, 0.1); /* Smooth dark tint wash */
             transition: opacity 0.25s ease;
             pointer-events: none; 
             padding: 0 24px;
@@ -214,6 +257,17 @@
     </style>
 </head>
 <body>
+    <!-- Retro Top Status Bar -->
+<div class="mac-menubar">
+     <img class="menu-avatar" src="pfp.png">
+    <span class="menu-item" style="font-weight: 700;">File</span>
+    <span class="menu-item">Edit</span>
+    <span class="menu-item">View</span>
+    <span class="menu-item">Go</span>
+    <span class="menu-item">Window</span>
+    <span class="menu-item">Help</span>
+</div>
+
 
     <div class="header-container">
         <h1>Heading text</h1>
