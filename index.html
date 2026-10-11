@@ -48,9 +48,6 @@
             padding-top: 65px !important;
         }
 
-        /* Font Import */
-        @import url('https://googleapis.com');
-
         .window-titlebar {
             width: 100%;
             height: 24px;
@@ -83,13 +80,22 @@
 
         /* Base styles */
         body { 
-            font-family: 'Rubik', system-ui, -apple-system, sans-serif !important; 
-            background: #0e0e10; 
+            font-family: 'Lucida Grande', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif !important; 
+            background-color: #0c1a30;
+            background-image: 
+                linear-gradient(90deg, rgba(255, 255, 255, 0.007) 50%, transparent 50%),
+                radial-gradient(circle at 20% 20%, #1e4ec2 0%, transparent 40%),
+                radial-gradient(circle at 80% 40%, #0088ff 0%, transparent 50%),
+                radial-gradient(circle at 40% 80%, #102a6b 0%, transparent 60%),
+                radial-gradient(circle at 90% 90%, #22d3ee 0%, transparent 35%);
+            background-size: 4px 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+            background-attachment: fixed;
             color: white; 
             padding: 40px 20px; 
             margin: 0;
             -webkit-font-smoothing: antialiased;
         }
+
 
         /* Center the Heading */
         .header-container {
@@ -99,15 +105,17 @@
 
         .header-container h1 {
             font-weight: 700;
-            font-size: 2.5rem;
+            font-size: 2.6rem;
             margin-bottom: 10px;
             letter-spacing: -0.5px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
         }
-
+        
         .header-container p {
             font-weight: 400;
-            color: #8a8a93;
+            color: #b0c2de; /* Powder blue accent shade */
             font-size: 1.1rem;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
         }
 
         /* Three-Column Grid Setup */
