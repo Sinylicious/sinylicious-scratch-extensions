@@ -65,13 +65,17 @@
 
         .project-grid { 
             display: grid; 
-            /* Uses auto-fit and a fixed maximum card width structure */
             grid-template-columns: repeat(auto-fit, minmax(320px, 380px)); 
             gap: 30px; 
             max-width: 1200px;
             margin: 40px auto 0 auto;
-            /* This centers the cards flawlessly when empty tracks collapse */
             justify-content: center; 
+        }
+        
+        .project-grid.search-active {
+            display: flex !important;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
         .card { 
@@ -83,14 +87,16 @@
             flex-direction: column;
             box-sizing: border-box;
             transition: transform 0.2s ease, border-color 0.2s ease;
+            
+            /* Lock the size across both grid and flex views */
             width: 100%;
+            max-width: 380px; 
+            min-width: 320px;
         }
-        
-        /* NEW: The browser handles hiding items instead of forcing inline-flex onto them */
+
         .card[data-hidden="true"] {
             display: none !important;
         }
-
 
         .card:hover {
             transform: translateY(-4px);
@@ -212,13 +218,21 @@
         </div>
     </div>
 
-    <script>
+<script>
     document.addEventListener('DOMContentLoaded', () => {
         const searchBar = document.querySelector('.search-bar');
+        const grid = document.querySelector('.project-grid');
         const cards = document.querySelectorAll('.card');
 
         searchBar.addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase().trim();
+
+            // Toggle flex mode if there is a search term typed out
+            if (searchTerm.length > 0) {
+                grid.classList.add('search-active');
+            } else {
+                grid.classList.remove('search-active');
+            }
 
             cards.forEach(card => {
                 const imgAlt = card.querySelector('.thumbnail')?.getAttribute('alt') || '';
@@ -226,16 +240,15 @@
                 const combinedText = `${imgAlt} ${description}`.toLowerCase();
 
                 if (combinedText.includes(searchTerm)) {
-                    // Item matches: clear the hidden flag
                     card.removeAttribute('data-hidden');
                 } else {
-                    // Item doesn't match: trigger CSS display: none safely
                     card.setAttribute('data-hidden', 'true');
                 }
             });
         });
     });
 </script>
+
 
 
 </body>
@@ -329,4 +342,3 @@
             </div>
             <hr class="separator">
             <p class="description">Description text goes here at the bottom of the card container.</p>
-            
