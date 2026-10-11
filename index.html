@@ -8,6 +8,36 @@
         /* Secure Dual-Path Font Import */
         @import url('https://googleapis.com');
 
+        .window-titlebar {
+            width: 100%;
+            height: 24px;
+            background: #fff linear-gradient(to bottom, #f6f6f6 0%, #e2e2e2 100%);
+            background-image: repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(0,0,0,0.05) 1px, rgba(0,0,0,0.05) 2px);
+            border-bottom: 1px solid #b3b3b3;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            box-sizing: border-box;
+            margin: -18px -18px 15px -18px; /* Pulls it up flush against card padding */
+            width: calc(100% + 36px);
+            border-radius: 14px 14px 0 0;
+        }
+        
+        /* Red, Yellow, Green Window Dots */
+        .window-dots {
+            display: flex;
+            gap: 6px;
+        }
+        .dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            box-shadow: inset 0 1px 2px rgba(255,255,255,0.5), 0 1px 1px rgba(0,0,0,0.2);
+        }
+        .dot-red { background: linear-gradient(#ff7d7d, #ff2626); border: 1px solid #cf0000; }
+        .dot-yellow { background: linear-gradient(#ffdf7d, #ffb626); border: 1px solid #cf8700; }
+        .dot-green { background: linear-gradient(#97ff7d, #49ff26); border: 1px solid #1fcf00; }
+
         /* Base styles */
         body { 
             font-family: 'Rubik', system-ui, -apple-system, sans-serif !important; 
@@ -187,6 +217,13 @@
 
         <!-- CARD 1: MOTION++ -->
         <div class="card card-motion">
+            <div class="window-titlebar">
+            <div class="window-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+            </div>
+        </div>
             <div class="thumbnail-container">
                 <img class="thumbnail" src="thumbnails/motion-plus-plus.svg" alt="motion++">
                 <div class="hover-overlay">
@@ -202,6 +239,13 @@
 
         <!-- CARD 2: LOOKS++ -->
         <div class="card card-looks">
+            <div class="window-titlebar">
+            <div class="window-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+            </div>
+        </div>
             <div class="thumbnail-container">
                 <img class="thumbnail" src="thumbnails/looks-plus-plus.svg" alt="looks++">
                 <div class="hover-overlay">
@@ -217,6 +261,13 @@
 
         <!-- CARD 3: SOUND++ -->
         <div class="card card-sound">
+            <div class="window-titlebar">
+            <div class="window-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+            </div>
+        </div>
             <div class="thumbnail-container">
                 <img class="thumbnail" src="thumbnails/sound-plus-plus.svg" alt="sound++">
                 <div class="hover-overlay">
@@ -232,6 +283,13 @@
 
         <!-- CARD 4: EVENTS++ -->
         <div class="card card-events">
+            <div class="window-titlebar">
+            <div class="window-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+            </div>
+        </div>
             <div class="thumbnail-container">
                 <img class="thumbnail" src="thumbnails/events-plus-plus.svg" alt="events++">
                 <div class="hover-overlay">
@@ -247,6 +305,13 @@
 
         <!-- CARD 5: CONTROL++ -->
         <div class="card card-control">
+        <div class="window-titlebar">
+            <div class="window-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+            </div>
+        </div>
             <div class="thumbnail-container">
                 <img class="thumbnail" src="thumbnails/control-plus-plus.svg" alt="control++">
                 <div class="hover-overlay">
@@ -262,6 +327,13 @@
 
         <!-- CARD 6: SENSING++ -->
         <div class="card card-sensing">
+        <div class="window-titlebar">
+            <div class="window-dots">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+            </div>
+        </div>
             <div class="thumbnail-container">
                 <img class="thumbnail" src="thumbnails/sensing-plus-plus.svg" alt="sensing++">
                 <div class="hover-overlay">
