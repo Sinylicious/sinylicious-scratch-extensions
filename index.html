@@ -4,20 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scratch Custom Blocks Hub</title>
+    
+    <!-- Import Rubik Font (Weights 400 and 500 for Medium) -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+
     <style>
-        /* Base styles (setting up for our Aqua look later) */
+        /* Base styles */
         body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            font-family: 'Rubik', -apple-system, sans-serif; 
             background: #111; 
             color: white; 
             padding: 40px 20px; 
             margin: 0;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* 1. Center the Heading */
         .header-container {
             text-align: center;
             margin-bottom: 40px;
+        }
+
+        .header-container h1 {
+            font-weight: 500; /* Medium weight */
+            margin-bottom: 10px;
+        }
+
+        .header-container p {
+            font-weight: 400;
+            color: #aaa;
         }
 
         /* 2. Three-Column Grid Setup */
@@ -39,6 +56,12 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+        }
+
+        .card h3 {
+            font-weight: 500; /* Medium weight */
+            margin-top: 0;
+            margin-bottom: 15px;
         }
 
         /* 3. SVG Thumbnail Styling */
@@ -66,7 +89,7 @@
             text-decoration: none; 
             border-radius: 6px; 
             font-size: 0.9rem;
-            font-weight: bold;
+            font-weight: 500; /* Medium weight */
             text-align: center;
             transition: opacity 0.2s;
         }
@@ -90,6 +113,7 @@
         /* 5. Description placed at the very bottom */
         .description {
             font-size: 0.95rem;
+            font-weight: 400;
             color: #ccc;
             margin: 10px 0 0 0;
             line-height: 1.4;
@@ -100,50 +124,77 @@
 
     <!-- Centered Heading Area -->
     <div class="header-container">
-        <h1>My Vanilla Scratch Blocks Hub</h1>
-        <p>A collection of advanced project templates and custom block mechanics.</p>
+        <h1>Heading text</h1>
+        <p>Subheading text description goes right here</p>
     </div>
 
     <!-- 3-Column Grid Grid -->
     <div class="project-grid">
 
-        <!-- PROJECT CARD 1 -->
+        <!-- ROW 1: CARD 1 -->
         <div class="card">
-            <h3>Custom Physics Engine</h3>
-            
-            <!-- Link to your own SVG file inside the repository -->
-            <img class="thumbnail" src="physics-thumbnail.svg" alt="Project Thumbnail">
-            
-            <!-- Two Buttons under Thumbnail, above Description -->
+            <h3>Project title</h3>
+            <img class="thumbnail" src="thumbnail-1.svg" alt="Project Thumbnail">
             <div class="button-group">
-                <a class="btn btn-scratch" href="https://mit.edu" target="_blank">Open in Scratch</a>
-                <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Documentation</a>
+                <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
+                <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
             </div>
-
-            <!-- Description at the Bottom -->
-            <p class="description">A template featuring advanced custom blocks for smooth grid physics, acceleration values, and wall collisions.</p>
+            <p class="description">Description text goes here at the bottom of the card container.</p>
         </div>
 
-        <!-- PROJECT CARD 2 -->
+        <!-- ROW 1: CARD 2 -->
         <div class="card">
-            <h3>Advanced Pathfinding</h3>
-            <img class="thumbnail" src="pathfinding-thumbnail.svg" alt="Project Thumbnail">
+            <h3>Project title</h3>
+            <img class="thumbnail" src="thumbnail-2.svg" alt="Project Thumbnail">
             <div class="button-group">
-                <a class="btn btn-scratch" href="https://mit.edu" target="_blank">Open in Scratch</a>
-                <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Documentation</a>
+                <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
+                <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
             </div>
-            <p class="description">An array-based pathfinding utility that allows vanilla clones to successfully navigate obstacles dynamically.</p>
+            <p class="description">Description text goes here at the bottom of the card container.</p>
         </div>
 
-        <!-- PROJECT CARD 3 -->
+        <!-- ROW 1: CARD 3 -->
         <div class="card">
-            <h3>JSON Parser Template</h3>
-            <img class="thumbnail" src="json-thumbnail.svg" alt="Project Thumbnail">
+            <h3>Project title</h3>
+            <img class="thumbnail" src="thumbnail-3.svg" alt="Project Thumbnail">
             <div class="button-group">
-                <a class="btn btn-scratch" href="https://mit.edu" target="_blank">Open in Scratch</a>
-                <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Documentation</a>
+                <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
+                <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
             </div>
-            <p class="description">Decodes nested string data into standard Scratch lists using optimized text scanner custom blocks.</p>
+            <p class="description">Description text goes here at the bottom of the card container.</p>
+        </div>
+
+        <!-- ROW 2: CARD 4 -->
+        <div class="card">
+            <h3>Project title</h3>
+            <img class="thumbnail" src="thumbnail-4.svg" alt="Project Thumbnail">
+            <div class="button-group">
+                <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
+                <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
+            </div>
+            <p class="description">Description text goes here at the bottom of the card container.</p>
+        </div>
+
+        <!-- ROW 2: CARD 5 -->
+        <div class="card">
+            <h3>Project title</h3>
+            <img class="thumbnail" src="thumbnail-5.svg" alt="Project Thumbnail">
+            <div class="button-group">
+                <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
+                <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
+            </div>
+            <p class="description">Description text goes here at the bottom of the card container.</p>
+        </div>
+
+        <!-- ROW 2: CARD 6 -->
+        <div class="card">
+            <h3>Project title</h3>
+            <img class="thumbnail" src="thumbnail-6.svg" alt="Project Thumbnail">
+            <div class="button-group">
+                <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
+                <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
+            </div>
+            <p class="description">Description text goes here at the bottom of the card container.</p>
         </div>
 
     </div>
