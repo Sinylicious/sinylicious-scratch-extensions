@@ -5,34 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scratch Custom Blocks Hub</title>
     <style>
-        /* Force load Rubik directly inside the CSS stylesheet */
+        /* Secure Dual-Path Font Import */
         @import url('https://googleapis.com');
 
         /* Base styles */
         body { 
-            font-family: 'Rubik', sans-serif !important; 
-            background: #111; 
+            font-family: 'Rubik', system-ui, -apple-system, sans-serif !important; 
+            background: #0e0e10; 
             color: white; 
             padding: 40px 20px; 
             margin: 0;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
         /* Center the Heading */
         .header-container {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
         }
 
         .header-container h1 {
-            font-weight: 500;
+            font-weight: 700;
+            font-size: 2.5rem;
             margin-bottom: 10px;
+            letter-spacing: -0.5px;
         }
 
         .header-container p {
             font-weight: 400;
-            color: #aaa;
+            color: #8a8a93;
+            font-size: 1.1rem;
         }
 
         /* Three-Column Grid Setup */
@@ -44,95 +46,107 @@
             margin: 0 auto;
         }
 
-        /* Project Card Styling */
+        /* Base Project Card Styling */
         .card { 
-            border: 2px solid #333; 
-            padding: 15px; /* Shrunk padding slightly to let SVG expand further */
-            border-radius: 12px; 
-            background: #222; 
+            background: #18181c; 
+            border: 2px solid #27272a;
+            padding: 16px; 
+            border-radius: 16px; 
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             box-sizing: border-box;
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
-        /* Scaled-up SVG Thumbnail to fit 480x360 Scratch aspect ratio perfectly */
+        .card:hover {
+            transform: translateY(-4px);
+        }
+
+        /* Unique Custom Colors for Card Borders to Match Your SVGs */
+        .card-motion { border-color: #2563eb; }
+        .card-looks { border-color: #7c3aed; }
+        .card-sound { border-color: #db2777; }
+        .card-events { border-color: #ea580c; }
+        .card-control { border-color: #eab308; }
+        .card-sensing { border-color: #0d9488; }
+
+        /* Scaled-up SVG Thumbnail */
         .thumbnail {
             width: 100%;
             height: auto;
-            aspect-ratio: 480 / 360; /* Enforces native Scratch frame size */
+            aspect-ratio: 480 / 360; 
             object-fit: contain;
-            border-radius: 6px;
-            margin-bottom: 15px;
+            border-radius: 10px;
+            margin-bottom: 16px;
         }
 
         /* Button Container */
         .button-group {
             display: flex;
-            gap: 10px;
+            gap: 12px;
             width: 100%;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
 
         /* Two Actions Buttons Layout */
         .btn { 
             flex: 1;
-            padding: 10px 5px; 
+            padding: 12px 5px; 
             text-decoration: none; 
-            border-radius: 6px; 
+            border-radius: 8px; 
             font-size: 0.9rem;
             font-weight: 500;
             text-align: center;
-            transition: opacity 0.2s;
+            transition: background 0.2s ease;
         }
 
-        .btn:hover {
-            opacity: 0.8;
-        }
-
+        /* Temporary solid colors before we turn them into Aqua buttons */
         .btn-scratch {
-            background: #4c97ff; 
+            background: #2563eb; 
             color: white; 
         }
 
-        .btn-docs {
-            background: #444; 
-            color: #ddd; 
-        }
+        .btn-scratch:hover { background: #1d4ed8; }
 
-        /* Horizontal Separator Bar before description */
+        .btn-docs {
+            background: #27272a; 
+            color: #e4e4e7; 
+        }
+        
+        .btn-docs:hover { background: #3f3f46; }
+
+        /* Horizontal Separator Bar */
         .separator {
             width: 100%;
-            height: 2px;
-            background-color: #333; /* We can change this to a glossy Aqua line later! */
+            height: 1px;
+            background-color: #27272a;
             border: none;
-            margin: 5px 0 15px 0;
+            margin: 4px 0 16px 0;
         }
 
         /* Description placed at the very bottom */
         .description {
             font-size: 0.95rem;
             font-weight: 400;
-            color: #ccc;
+            color: #a1a1aa;
             margin: 0;
-            line-height: 1.4;
+            line-height: 1.5;
         }
     </style>
 </head>
 <body>
 
-    <!-- Centered Heading Area -->
     <div class="header-container">
         <h1>Heading text</h1>
         <p>Subheading text description goes right here</p>
     </div>
 
-    <!-- 3-Column Grid Grid -->
     <div class="project-grid">
 
         <!-- CARD 1: MOTION++ -->
-        <div class="card">
+        <div class="card card-motion">
             <img class="thumbnail" src="thumbnails/motion-plus-plus.svg" alt="motion++">
             <div class="button-group">
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
@@ -143,7 +157,7 @@
         </div>
 
         <!-- CARD 2: LOOKS++ -->
-        <div class="card">
+        <div class="card card-looks">
             <img class="thumbnail" src="thumbnails/looks-plus-plus.svg" alt="looks++">
             <div class="button-group">
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
@@ -154,7 +168,7 @@
         </div>
 
         <!-- CARD 3: SOUND++ -->
-        <div class="card">
+        <div class="card card-sound">
             <img class="thumbnail" src="thumbnails/sound-plus-plus.svg" alt="sound++">
             <div class="button-group">
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
@@ -165,7 +179,7 @@
         </div>
 
         <!-- CARD 4: EVENTS++ -->
-        <div class="card">
+        <div class="card card-events">
             <img class="thumbnail" src="thumbnails/events-plus-plus.svg" alt="events++">
             <div class="button-group">
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
@@ -176,7 +190,7 @@
         </div>
 
         <!-- CARD 5: CONTROL++ -->
-        <div class="card">
+        <div class="card card-control">
             <img class="thumbnail" src="thumbnails/control-plus-plus.svg" alt="control++">
             <div class="button-group">
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
@@ -187,7 +201,7 @@
         </div>
 
         <!-- CARD 6: SENSING++ -->
-        <div class="card">
+        <div class="card card-sensing">
             <img class="thumbnail" src="thumbnails/sensing-plus-plus.svg" alt="sensing++">
             <div class="button-group">
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
