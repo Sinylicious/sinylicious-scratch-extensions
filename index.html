@@ -125,7 +125,7 @@
             transition: filter 0.3s ease, transform 0.3s ease;
         }
 
-        /* NEW: Hidden Overlay that holds the floating buttons */
+        /* Glass overlay container that activates on hover */
         .hover-overlay {
             position: absolute;
             top: 0;
@@ -136,17 +136,19 @@
             align-items: center;
             justify-content: center;
             opacity: 0;
-            background: rgba(0, 0, 0, 0.2); /* Subtle glass dimming */
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
             transition: opacity 0.3s ease;
-            pointer-events: none; /* Prevents clicking when hidden */
-            padding: 0 20px;
+            pointer-events: none; 
+            padding: 0 24px;
             box-sizing: border-box;
         }
 
-        /* Hover Action Trigger: Blurs image and reveals buttons simultaneously */
+
         .card:hover .thumbnail {
-            filter: blur(6px);
-            transform: scale(1.02); /* Slight swell effect for depth */
+            filter: none;
+            transform: scale(1.01);
         }
 
         .card:hover .hover-overlay {
