@@ -203,6 +203,33 @@
     </div>
 
     <div class="project-grid">
+         <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchBar = document.querySelector('.search-bar');
+            const cards = document.querySelectorAll('.card');
+
+            searchBar.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase().trim();
+
+                cards.forEach(card => {
+                    // Pulls text from the image alt attribute and the card description
+                    const imgAlt = card.querySelector('.thumbnail')?.getAttribute('alt') || '';
+                    const description = card.querySelector('.description')?.textContent || '';
+                    const combinedText = `${imgAlt} ${description}`.toLowerCase();
+
+                    // Shows the card if the search term matches, hides it if it doesn't
+                    if (combinedText.includes(searchTerm)) {
+                        card.style.display = 'flex'; 
+                    } else {
+                        card.style.display = 'none'; 
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
 
         <!-- CARD 1: MOTION++ -->
         <div class="card card-motion">
