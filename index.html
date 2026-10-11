@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scratch Custom Blocks Hub</title>
     <style>
-        /* Secure Dual-Path Font Import */
         @import url('https://googleapis.com');
 
-        /* Base styles */
         body { 
-            font-family: 'Rubik', system-ui, -apple-system, sans-serif !important; 
+            font-family: 'Rubik', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important; 
             background: #0e0e10; 
             color: white; 
             padding: 40px 20px; 
@@ -18,10 +16,9 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Center the Heading */
         .header-container {
             text-align: center;
-            margin-bottom: 50px;
+            margin-bottom: 40px;
         }
 
         .header-container h1 {
@@ -35,18 +32,45 @@
             font-weight: 400;
             color: #8a8a93;
             font-size: 1.1rem;
+            margin-bottom: 25px;
         }
 
-        /* Three-Column Grid Setup */
+        .search-container {
+            max-width: 450px;
+            margin: 0 auto;
+        }
+
+        .search-bar {
+            width: 100%;
+            padding: 14px 20px;
+            background: #18181c;
+            border: 2px solid #27272a;
+            border-radius: 12px;
+            color: white;
+            font-family: inherit;
+            font-size: 1rem;
+            box-sizing: border-box;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .search-bar:focus {
+            border-color: #4c97ff;
+            box-shadow: 0 0 12px rgba(76, 151, 255, 0.2);
+        }
+
+        .search-bar::placeholder {
+            color: #52525b;
+        }
+
         .project-grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
             gap: 30px; 
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 40px auto 0 auto;
         }
 
-        /* Base Project Card Styling */
         .card { 
             background: #18181c; 
             border: 2px solid #27272a;
@@ -54,8 +78,6 @@
             border-radius: 16px; 
             display: flex;
             flex-direction: column;
-            align-items: center;
-            text-align: center;
             box-sizing: border-box;
             transition: transform 0.2s ease, border-color 0.2s ease;
         }
@@ -64,7 +86,6 @@
             transform: translateY(-4px);
         }
 
-        /* Unique Custom Colors for Card Borders to Match Your SVGs */
         .card-motion { border-color: #2563eb; }
         .card-looks { border-color: #7c3aed; }
         .card-sound { border-color: #db2777; }
@@ -72,7 +93,6 @@
         .card-control { border-color: #eab308; }
         .card-sensing { border-color: #0d9488; }
 
-        /* NEW: Image Container to isolate the blur overlay layout */
         .thumbnail-container {
             position: relative;
             width: 100%;
@@ -80,17 +100,17 @@
             border-radius: 10px;
             overflow: hidden;
             margin-bottom: 16px;
+            background: #111115; 
         }
 
-        /* Scaled-up SVG Thumbnail with smooth blur transition */
         .thumbnail {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            transition: filter 0.3s ease, transform 0.3s ease;
+            display: block;
+            transition: filter 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* NEW: Hidden Overlay that holds the floating buttons */
         .hover-overlay {
             position: absolute;
             top: 0;
@@ -101,43 +121,40 @@
             align-items: center;
             justify-content: center;
             opacity: 0;
-            background: rgba(0, 0, 0, 0.2); /* Subtle glass dimming */
+            background: rgba(0, 0, 0, 0.15); 
             transition: opacity 0.3s ease;
-            pointer-events: none; /* Prevents clicking when hidden */
-            padding: 0 20px;
+            pointer-events: none; 
+            padding: 0 24px;
             box-sizing: border-box;
         }
 
-        /* Hover Action Trigger: Blurs image and reveals buttons simultaneously */
         .card:hover .thumbnail {
-            filter: blur(6px);
-            transform: scale(1.02); /* Slight swell effect for depth */
+            filter: blur(3px); 
+            transform: scale(1.01);
         }
 
         .card:hover .hover-overlay {
             opacity: 1;
-            pointer-events: auto; /* Re-enables clicking on hover */
+            pointer-events: auto;
         }
 
-        /* Button Container tweaked to fit nicely in the middle */
         .button-group {
             display: flex;
             gap: 12px;
             width: 100%;
-            max-width: 280px;
         }
 
-        /* Two Actions Buttons Layout */
         .btn { 
             flex: 1;
-            padding: 12px 5px; 
+            padding: 12px 8px; 
             text-decoration: none; 
             border-radius: 8px; 
             font-size: 0.9rem;
             font-weight: 500;
             text-align: center;
+            box-sizing: border-box;
             transition: background 0.2s ease, transform 0.1s ease;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5); /* Gives floating buttons separation */
+            box-shadow: 0 6px 16px rgba(0,0,0,0.5); 
         }
 
         .btn:active {
@@ -157,7 +174,6 @@
         }
         .btn-docs:hover { background: #3f3f46; }
 
-        /* Horizontal Separator Bar */
         .separator {
             width: 100%;
             height: 1px;
@@ -166,13 +182,13 @@
             margin: 4px 0 16px 0;
         }
 
-        /* Description placed at the very bottom */
         .description {
             font-size: 0.95rem;
             font-weight: 400;
             color: #a1a1aa;
             margin: 0;
             line-height: 1.5;
+            text-align: center;
         }
     </style>
 </head>
@@ -181,6 +197,9 @@
     <div class="header-container">
         <h1>Heading text</h1>
         <p>Subheading text description goes right here</p>
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search custom blocks...">
+        </div>
     </div>
 
     <div class="project-grid">
@@ -273,9 +292,4 @@
             </div>
             <hr class="separator">
             <p class="description">Description text goes here at the bottom of the card container.</p>
-        </div>
-
-    </div>
-
-</body>
-</html>
+            
