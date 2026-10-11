@@ -4,13 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scratch Custom Blocks Hub</title>
-    
-    <!-- Import Rubik Font (Weights 400 and 500 for Medium) -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
-    <link href="https://googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
-
     <style>
+        /* Force load Rubik directly inside the CSS stylesheet */
+        @import url('https://googleapis.com');
+
         /* Base styles */
         body { 
             font-family: 'Rubik', sans-serif !important; 
@@ -29,7 +26,7 @@
         }
 
         .header-container h1 {
-            font-weight: 500; /* Medium weight */
+            font-weight: 500;
             margin-bottom: 10px;
         }
 
@@ -41,7 +38,7 @@
         /* Three-Column Grid Setup */
         .project-grid { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
             gap: 30px; 
             max-width: 1200px;
             margin: 0 auto;
@@ -50,23 +47,23 @@
         /* Project Card Styling */
         .card { 
             border: 2px solid #333; 
-            padding: 20px; 
+            padding: 15px; /* Shrunk padding slightly to let SVG expand further */
             border-radius: 12px; 
             background: #222; 
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
+            box-sizing: border-box;
         }
 
-        /* SVG Thumbnail Styling */
+        /* Scaled-up SVG Thumbnail to fit 480x360 Scratch aspect ratio perfectly */
         .thumbnail {
             width: 100%;
             height: auto;
-            max-height: 200px;
+            aspect-ratio: 480 / 360; /* Enforces native Scratch frame size */
             object-fit: contain;
             border-radius: 6px;
-            margin-top: 10px; /* Replaces title spacing */
             margin-bottom: 15px;
         }
 
@@ -85,7 +82,7 @@
             text-decoration: none; 
             border-radius: 6px; 
             font-size: 0.9rem;
-            font-weight: 500; /* Medium weight */
+            font-weight: 500;
             text-align: center;
             transition: opacity 0.2s;
         }
@@ -94,16 +91,23 @@
             opacity: 0.8;
         }
 
-        /* Style for the Scratch Link */
         .btn-scratch {
             background: #4c97ff; 
             color: white; 
         }
 
-        /* Style for Future Documentation Link */
         .btn-docs {
             background: #444; 
             color: #ddd; 
+        }
+
+        /* Horizontal Separator Bar before description */
+        .separator {
+            width: 100%;
+            height: 2px;
+            background-color: #333; /* We can change this to a glossy Aqua line later! */
+            border: none;
+            margin: 5px 0 15px 0;
         }
 
         /* Description placed at the very bottom */
@@ -111,7 +115,7 @@
             font-size: 0.95rem;
             font-weight: 400;
             color: #ccc;
-            margin: 10px 0 0 0;
+            margin: 0;
             line-height: 1.4;
         }
     </style>
@@ -129,12 +133,12 @@
 
         <!-- CARD 1: MOTION++ -->
         <div class="card">
-            <!-- Looks inside a folder named thumbnails for motion-plus-plus.svg -->
             <img class="thumbnail" src="thumbnails/motion-plus-plus.svg" alt="motion++">
             <div class="button-group">
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
                 <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
             </div>
+            <hr class="separator">
             <p class="description">Description text goes here at the bottom of the card container.</p>
         </div>
 
@@ -145,6 +149,7 @@
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
                 <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
             </div>
+            <hr class="separator">
             <p class="description">Description text goes here at the bottom of the card container.</p>
         </div>
 
@@ -155,6 +160,7 @@
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
                 <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
             </div>
+            <hr class="separator">
             <p class="description">Description text goes here at the bottom of the card container.</p>
         </div>
 
@@ -165,6 +171,7 @@
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
                 <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
             </div>
+            <hr class="separator">
             <p class="description">Description text goes here at the bottom of the card container.</p>
         </div>
 
@@ -175,6 +182,7 @@
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
                 <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
             </div>
+            <hr class="separator">
             <p class="description">Description text goes here at the bottom of the card container.</p>
         </div>
 
@@ -185,14 +193,11 @@
                 <a class="btn btn-scratch" href="#" target="_blank">Button text</a>
                 <a class="btn btn-docs" href="#" onclick="alert('Docs coming soon!'); return false;">Button text</a>
             </div>
+            <hr class="separator">
             <p class="description">Description text goes here at the bottom of the card container.</p>
         </div>
 
     </div>
-
-</body>
-</html>
-
 
 </body>
 </html>
