@@ -80,14 +80,19 @@
 
         /* Base styles */
         body { 
-            font-family: 'Lucida Grande', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif !important; 
-            background-color: #0c1a30;
+            font-family: 'Lucida Grande', -apple-system, BlinkMacSystemFont, sans-serif !important; 
+            
+            /* Authentic 2000s Aqua Curved Blue Waves Wallpaper (Pure CSS) */
+            background-color: #0b2d72;
             background-image: 
+                /* Fine vertical pinstripes layer */
                 linear-gradient(90deg, rgba(255, 255, 255, 0.007) 50%, transparent 50%),
-                radial-gradient(circle at 20% 20%, #1e4ec2 0%, transparent 40%),
-                radial-gradient(circle at 80% 40%, #0088ff 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, #102a6b 0%, transparent 60%),
-                radial-gradient(circle at 90% 90%, #22d3ee 0%, transparent 35%);
+                /* Sharp overlapping angled liquid waves */
+                linear-gradient(145deg, #1656cc 0%, #103fa3 35%, transparent 35%),
+                linear-gradient(-35deg, #0e3482 0%, #061e52 60%, transparent 60%),
+                linear-gradient(35deg, #247aff 0%, #1459d6 40%, transparent 40%),
+                linear-gradient(115deg, #092154 0%, #12409c 70%, transparent 70%);
+            
             background-size: 4px 100%, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
             background-attachment: fixed;
             color: white; 
@@ -95,6 +100,7 @@
             margin: 0;
             -webkit-font-smoothing: antialiased;
         }
+
 
 
         /* Center the Heading */
