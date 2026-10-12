@@ -236,16 +236,48 @@
             transform: scale(0.95);
         }
 
-        .btn-scratch {
-            background: #2563eb; 
-            color: white; 
+        .btn-scratch { 
+            flex: 1;
+            padding: 10px 8px; 
+            text-decoration: none !important; 
+            border-radius: 20px; 
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: white !important; 
+            /* High-fidelity Scratch Orange Capsule Blend */
+            background: linear-gradient(to bottom, #ffb04c 0%, #ff9514 45%, #e67e00 50%, #b36200 100%) !important;
+            border: 1px solid #995300;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -2px 4px rgba(0,0,0,0.2);
+            text-shadow: 0 -1px 1px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px; /* Spacing between icon and text */
+            box-sizing: border-box;
+            transition: filter 0.2s, transform 0.1s;
         }
+
         .btn-scratch:hover { background: #1d4ed8; }
 
-        .btn-docs {
-            background: #27272a; 
-            color: #e4e4e7; 
-            border: 1px solid #3f3f46;
+        .btn-docs { 
+            flex: 1;
+            padding: 10px 8px; 
+            text-decoration: none !important; 
+            border-radius: 20px; 
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: white !important;
+            /* High-fidelity Google Docs Blue Capsule Blend */
+            background: linear-gradient(to bottom, #7caeff 0%, #4c8cff 45%, #2672ff 50%, #0049cf 100%) !important;
+            border: 1px solid #003699;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.4), inset 0 -2px 4px rgba(0,0,0,0.2);
+            text-shadow: 0 -1px 1px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            box-sizing: border-box;
+            transition: filter 0.2s, transform 0.1s;
         }
         .btn-docs:hover { background: #3f3f46; }
 
@@ -267,20 +299,49 @@
             line-height: 1.5;
             text-align: center;
         }
+        .btn-icon {
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+            display: block;
+        }
+        
+        .menu-item {
+            margin-right: 8px;
+            padding: 2px 10px;
+            border-radius: 4px;
+            color: #333333 !important;
+            text-decoration: none !important;
+            cursor: default;
+            display: inline-block;
+            font-weight: 500;
+        }
+        
+        
+        .menu-item:hover {
+            background: #1a6fff !important;
+            color: white !important;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.3);
+        }
+        
+        /* Keeps your profile picture from trying to turn blue on hover */
+        .menu-avatar:hover {
+            background: transparent !important;
+        }
 
     </style>
 </head>
 <body>
-    <!-- Retro Top Status Bar -->
 <div class="mac-menubar">
-    <img class="menu-avatar" src="./pfp.png" alt="Profile Picture">
-    <span class="menu-item" style="font-weight: 700;">File</span>
-    <span class="menu-item">Edit</span>
-    <span class="menu-item">View</span>
-    <span class="menu-item">Go</span>
-    <span class="menu-item">Window</span>
-    <span class="menu-item">Help</span>
+    <a href="#" class="menu-avatar-link"><img class="menu-avatar" src="./pfp.png" alt="Profile Picture"></a>
+    <a href="#" class="menu-item" style="font-weight: 700;">File</a>
+    <a href="#" class="menu-item">Edit</a>
+    <a href="#" class="menu-item">View</a>
+    <a href="#" class="menu-item">Go</a>
+    <a href="#" class="menu-item">Window</a>
+    <a href="#" class="menu-item">Help</a>
 </div>
+
 
 
     <div class="header-container">
@@ -303,8 +364,7 @@
                 <img class="thumbnail" src="thumbnails/motion-plus-plus.svg" alt="motion++">
                 <div class="hover-overlay">
                     <div class="button-group">
-                        <!-- Replace 123456789 with your actual Motion++ project ID -->
-                        <a class="btn-scratch" href="https://mit.edu" target="_blank">Open Project</a>
+                        <a class="btn-scratch" href="https://scratch.mit.edu/projects/1388019894/" target="_blank">Open Project</a>
                         <a class="btn-docs" href="#" onclick="alert('Motion++ documentation is coming soon!'); return false;">Documentation</a>
                     </div>
                 </div>
@@ -326,8 +386,7 @@
                 <img class="thumbnail" src="thumbnails/looks-plus-plus.svg" alt="looks++">
                 <div class="hover-overlay">
                     <div class="button-group">
-                        <!-- Replace 123456789 with your actual Looks++ project ID -->
-                        <a class="btn-scratch" href="https://mit.edu" target="_blank">Open Project</a>
+                        <a class="btn-scratch" href="https://scratch.mit.edu/projects/1389366240/" target="_blank">Open Project</a>
                         <a class="btn-docs" href="#" onclick="alert('Looks++ documentation is coming soon!'); return false;">Documentation</a>
                     </div>
                 </div>
@@ -349,8 +408,7 @@
                 <img class="thumbnail" src="thumbnails/sound-plus-plus.svg" alt="sound++">
                 <div class="hover-overlay">
                     <div class="button-group">
-                        <!-- Replace 123456789 with your actual Sound++ project ID -->
-                        <a class="btn-scratch" href="https://mit.edu" target="_blank">Open Project</a>
+                        <a class="btn-scratch" href="https://scratch.mit.edu/projects/1390371338/" target="_blank">Open Project</a>
                         <a class="btn-docs" href="#" onclick="alert('Sound++ documentation is coming soon!'); return false;">Documentation</a>
                     </div>
                 </div>
